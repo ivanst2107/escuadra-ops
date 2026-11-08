@@ -42,25 +42,69 @@
   </header>
 
   <main id="top">
+    <div class="hero-bg">
     <section class="hero wrap">
-      <p class="eyebrow" data-i18n="hero.eyebrow">Nuestra visión</p>
-      <h1 data-i18n="hero.title">Empresas que operan solas en un 90%.</h1>
-      <p class="lead" data-i18n="hero.lead">Combinamos scripts e inteligencia artificial para automatizar el trabajo administrativo de todos los días. Menos errores, cierres más rápidos y tu equipo enfocado en decidir.</p>
-      <div class="cta-row">
-        <a class="btn btn--primary" href="#piloto" data-i18n="hero.cta">Únete al piloto</a>
-        <a class="btn btn--ghost" href="#paso-1" data-i18n="hero.cta2">Cómo funciona</a>
+      <div class="hero__copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Nuestra visión</p>
+        <h1 data-i18n="hero.title">Empresas que operan solas en un 90%.</h1>
+        <p class="lead" data-i18n="hero.lead">Combinamos scripts e inteligencia artificial para automatizar el trabajo administrativo de todos los días. Menos errores, cierres más rápidos y tu equipo enfocado en decidir.</p>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="#piloto" data-i18n="hero.cta">Únete al piloto</a>
+          <a class="btn btn--ghost" href="#paso-1" data-i18n="hero.cta2">Cómo funciona</a>
+        </div>
+        <ul class="chips">
+          <li data-i18n="hero.chip1">Scripts + IA</li>
+          <li data-i18n="hero.chip2">Hecho por contadores</li>
+          <li data-i18n="hero.chip3">México y Canadá</li>
+        </ul>
       </div>
-      <ul class="chips">
-        <li data-i18n="hero.chip1">Scripts + IA</li>
-        <li data-i18n="hero.chip2">Hecho por contadores</li>
-        <li data-i18n="hero.chip3">México y Canadá</li>
-      </ul>
+
+      <figure class="demo" aria-label="Ejemplo de conciliación automática">
+        <div class="demo__head">
+          <div>
+            <p class="demo__title" data-i18n="demo.title">Conciliación · Octubre</p>
+            <p class="demo__meta" data-i18n="demo.meta">BBVA ···4821 · 312 movimientos</p>
+          </div>
+          <div class="demo__pct"><span id="pct">0</span>%</div>
+        </div>
+        <div class="demo__bar"><span id="bar"></span></div>
+        <ul class="demo__rows">
+          <li class="row" data-kind="rule">
+            <div class="row__l"><span class="row__amt">$48,720.00</span><span class="row__ref">SPEI · NORTE INDUSTRIAL</span></div>
+            <div class="row__r"><span class="row__doc">CFDI A-1042</span><span class="tag tag--rule" data-i18n="demo.rule">Regla</span></div>
+          </li>
+          <li class="row" data-kind="rule">
+            <div class="row__l"><span class="row__amt">−$12,180.40</span><span class="row__ref">PAGO PROV 0398</span></div>
+            <div class="row__r"><span class="row__doc">CFDI F-77310</span><span class="tag tag--rule" data-i18n="demo.rule">Regla</span></div>
+          </li>
+          <li class="row" data-kind="rule">
+            <div class="row__l"><span class="row__amt">$96,000.00</span><span class="row__ref">SPEI · 3 FACTURAS</span></div>
+            <div class="row__r"><span class="row__doc">A-1038 · 39 · 40</span><span class="tag tag--rule" data-i18n="demo.rule">Regla</span></div>
+          </li>
+          <li class="row" data-kind="ai">
+            <div class="row__l"><span class="row__amt">$7,540.00</span><span class="row__ref">DEP EFECTIVO SUC 112</span></div>
+            <div class="row__r"><span class="row__doc">CFDI A-1045?</span><span class="tag tag--ai" data-i18n="demo.ai">IA sugiere</span></div>
+          </li>
+          <li class="row" data-kind="flag">
+            <div class="row__l"><span class="row__amt">$31,320.00</span><span class="row__ref">SPEI · CONSTRUCTORA SUR</span></div>
+            <div class="row__r"><span class="row__doc" data-i18n="demo.norep">Falta REP</span><span class="tag tag--flag" data-i18n="demo.flag">Revisar</span></div>
+          </li>
+        </ul>
+        <figcaption class="demo__foot" data-i18n="demo.foot">Ejemplo ilustrativo · datos ficticios</figcaption>
+      </figure>
     </section>
+    </div>
 
     <section class="mission">
       <div class="wrap">
         <p class="eyebrow eyebrow--light" data-i18n="mission.eyebrow">Nuestra misión</p>
-        <p class="mission__text" data-i18n="mission.text">Automatizar el día a día, una tarea a la vez, hasta que la operación corra sola.</p>
+        <p class="mission__text" data-reveal data-i18n="mission.text">Automatizar el día a día, una tarea a la vez, hasta que la operación corra sola.</p>
+        <div class="goals">
+          <div data-reveal><b>90%</b><span data-i18n="goals.g1">de la operación automatizada</span></div>
+          <div data-reveal><b>&lt;1 h</b><span data-i18n="goals.g2">de revisión al mes por empresa</span></div>
+          <div data-reveal><b>0</b><span data-i18n="goals.g3">capturas manuales</span></div>
+        </div>
+        <p class="goals__note" data-i18n="goals.note">Nuestras metas, no promesas: medimos cada piloto contra ellas.</p>
       </div>
     </section>
 
@@ -151,6 +195,39 @@
           <h3 data-i18n="road.r4">Inventarios y costeo de obra</h3>
         </li>
       </ul>
+    </section>
+
+    <section class="wrap section">
+      <blockquote class="founder" data-reveal>
+        <p class="founder__q" data-i18n="founder.q">“En mi trabajo automaticé casi todas mis tareas: conciliaciones, reclasificaciones, intercompañía. Si una empresa grande puede operar así, una pequeña también.”</p>
+        <footer class="founder__who">
+          <span class="founder__avatar" aria-hidden="true">I</span>
+          <span><b>Iván</b><br /><span data-i18n="founder.role">Fundador · Contador con experiencia en México y Canadá</span></span>
+        </footer>
+      </blockquote>
+    </section>
+
+    <section id="faq" class="wrap section">
+      <p class="eyebrow" data-i18n="faq.eyebrow">Preguntas</p>
+      <h2 data-i18n="faq.title">Lo que más nos preguntan.</h2>
+      <div class="faq">
+        <details data-reveal>
+          <summary data-i18n="faq.q1">¿Tengo que cambiar mi sistema contable?</summary>
+          <p data-i18n="faq.a1">No. Trabajamos con tus estados de cuenta y tus XML, y te entregamos un archivo listo para importar en tu sistema.</p>
+        </details>
+        <details data-reveal>
+          <summary data-i18n="faq.q2">¿Qué pasa si la IA se equivoca?</summary>
+          <p data-i18n="faq.a2">La IA solo sugiere. Nada se da por conciliado sin una regla comprobada o tu aprobación.</p>
+        </details>
+        <details data-reveal>
+          <summary data-i18n="faq.q3">¿Mis datos están seguros?</summary>
+          <p data-i18n="faq.a3">Pedimos solo acceso de lectura, nunca tu e.firma. Tus archivos se guardan cifrados y se borran en el plazo que acordemos.</p>
+        </details>
+        <details data-reveal>
+          <summary data-i18n="faq.q4">¿Cuánto cuesta?</summary>
+          <p data-i18n="faq.a4">Una cuota mensual según tu volumen de movimientos. Las empresas piloto tienen condiciones preferentes.</p>
+        </details>
+      </div>
     </section>
 
     <section id="piloto" class="pilot">

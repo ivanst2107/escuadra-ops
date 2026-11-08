@@ -48,6 +48,29 @@ const en = {
   'pilot.p': 'Preferred terms in exchange for your feedback. We start with one month of your history and show you the result.',
   'pilot.cta': 'I want to be a pilot',
   'pilot.share': 'Share on WhatsApp',
+  'demo.title': 'Reconciliation · October',
+  'demo.meta': 'BBVA ···4821 · 312 movements',
+  'demo.rule': 'Rule',
+  'demo.ai': 'AI suggests',
+  'demo.norep': 'Missing REP',
+  'demo.flag': 'Review',
+  'demo.foot': 'Illustrative example · sample data',
+  'goals.g1': 'of operations automated',
+  'goals.g2': 'of review per company each month',
+  'goals.g3': 'manual data entry',
+  'goals.note': 'Our goals, not promises: we measure every pilot against them.',
+  'founder.q': '“At my job I automated almost all my tasks: reconciliations, reclasses, intercompany. If a large company can run like that, a small one can too.”',
+  'founder.role': 'Founder · Accountant with experience in Mexico and Canada',
+  'faq.eyebrow': 'Questions',
+  'faq.title': 'What people ask us most.',
+  'faq.q1': 'Do I have to change my accounting system?',
+  'faq.a1': 'No. We work from your bank statements and invoice files, and give you a file ready to import into your system.',
+  'faq.q2': 'What if the AI gets it wrong?',
+  'faq.a2': 'AI only suggests. Nothing counts as reconciled without a proven rule or your approval.',
+  'faq.q3': 'Is my data safe?',
+  'faq.a3': 'We ask only for read access, never your tax signing credentials. Files are stored encrypted and deleted on the schedule we agree.',
+  'faq.q4': 'How much does it cost?',
+  'faq.a4': 'A monthly fee based on your transaction volume. Pilot companies get preferred terms.',
   'footer.forming': '(in formation)',
 };
 
@@ -76,4 +99,40 @@ const sticky = document.querySelector('.sticky-cta');
 const pilot = document.getElementById('piloto');
 if (sticky && pilot && 'IntersectionObserver' in window) {
   new IntersectionObserver(([e]) => sticky.classList.toggle('is-hidden', e.isIntersecting), { threshold: 0.2 }).observe(pilot);
+}
+
+// Scroll reveal
+const revealTargets = document.querySelectorAll('[data-reveal], .steps li, .cards .card, .road__item, .section > h2');
+revealTargets.forEach((el) => el.setAttribute('data-reveal', ''));
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if ('IntersectionObserver' in window && !reduce) {
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+  }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealTargets.forEach((el) => io.observe(el));
+} else {
+  revealTargets.forEach((el) => el.classList.add('is-in'));
+}
+
+// Hero demo: rows light up one by one, percentage counts up.
+const rows = [...document.querySelectorAll('.demo .row')];
+const pct = document.getElementById('pct');
+const bar = document.getElementById('bar');
+const steps = [24, 47, 71, 86, 92];
+function showRow(i) {
+  rows[i].classList.add('is-on');
+  const from = i ? steps[i - 1] : 0, to = steps[i];
+  bar.style.width = to + '%';
+  if (reduce) { pct.textContent = to; return; }
+  const t0 = performance.now();
+  const tick = (t) => {
+    const k = Math.min(1, (t - t0) / 500);
+    pct.textContent = Math.round(from + (to - from) * k);
+    if (k < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+if (rows.length && pct && bar) {
+  if (reduce) rows.forEach((_, i) => showRow(i));
+  else rows.forEach((_, i) => setTimeout(() => showRow(i), 500 + i * 650));
 }

@@ -57,6 +57,8 @@ const en = {
   'demo.norep': 'Missing REP',
   'demo.flag': 'Review',
   'demo.foot': 'Illustrative example · sample data',
+  'demo.replay': 'Replay',
+  'how.eyebrow': 'How it works',
   'goals.g1': 'of operations automated',
   'goals.g2': 'of review per company each month',
   'goals.g3': 'manual data entry',
@@ -117,11 +119,18 @@ if ('IntersectionObserver' in window && !reduce) {
   revealTargets.forEach((el) => el.classList.add('is-in'));
 }
 
-// Hero demo: rows light up one by one, percentage counts up.
+// Hero demo: plays when the card scrolls into view, replays on re-entry or tap.
 const rows = [...document.querySelectorAll('.demo .row')];
 const pct = document.getElementById('pct');
 const bar = document.getElementById('bar');
+const demo = document.querySelector('.demo');
 const steps = [24, 47, 71, 86, 92];
+let timers = [];
+function reset() {
+  timers.forEach(clearTimeout); timers = [];
+  rows.forEach((r) => r.classList.remove('is-on'));
+  pct.textContent = '0'; bar.style.width = '0';
+}
 function showRow(i) {
   rows[i].classList.add('is-on');
   const from = i ? steps[i - 1] : 0, to = steps[i];
@@ -135,7 +144,18 @@ function showRow(i) {
   };
   requestAnimationFrame(tick);
 }
-if (rows.length && pct && bar) {
-  if (reduce) rows.forEach((_, i) => showRow(i));
-  else rows.forEach((_, i) => setTimeout(() => showRow(i), 500 + i * 650));
+function play() {
+  reset();
+  if (reduce) { rows.forEach((_, i) => showRow(i)); return; }
+  rows.forEach((_, i) => timers.push(setTimeout(() => showRow(i), 400 + i * 700)));
+}
+if (rows.length && pct && bar && demo) {
+  document.getElementById('replay')?.addEventListener('click', play);
+  if ('IntersectionObserver' in window) {
+    let visible = false;
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !visible) { visible = true; play(); }
+      else if (!e.isIntersecting && visible) { visible = false; reset(); }
+    }, { threshold: 0.45 }).observe(demo);
+  } else play();
 }

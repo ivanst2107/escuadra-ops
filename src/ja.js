@@ -17,6 +17,8 @@ export const ja = {
   'demo.norep': '入金証明なし',
   'demo.flag': '要確認',
   'demo.foot': '説明用の例・架空のデータ',
+  'demo.replay': 'もう一度',
+  'how.eyebrow': '仕組み',
   'mission.eyebrow': '私たちのミッション',
   'mission.text': '日々の業務を一つずつ自動化し、会社の運営がひとりでに回るようにすること。',
   'goals.g1': '業務の自動化率',

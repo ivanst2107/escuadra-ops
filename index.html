@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Escuadra Ops | Empresas que operan solas</title>
+  <meta name="description" content="Automatizamos el trabajo administrativo con scripts e IA. Paso 1: tu conciliación bancaria contra CFDI se cierra sola." />
+  <meta name="theme-color" content="#0f5c4d" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Escuadra Ops" />
+  <meta property="og:title" content="Escuadra Ops | Empresas que operan solas" />
+  <meta property="og:description" content="Scripts para lo repetitivo, IA para lo ambiguo, personas para decidir. Paso 1: tu conciliación bancaria se cierra sola." />
+  <meta property="og:url" content="https://ivanst2107.github.io/escuadra-ops/" />
+  <meta property="og:image" content="https://ivanst2107.github.io/escuadra-ops/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a href="#top" class="brand" aria-label="Escuadra Ops">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M8 7v18h18z" fill="none" stroke="var(--bg)" stroke-width="2.4" stroke-linejoin="round"/><path d="M8 19h6v6" fill="none" stroke="var(--bg)" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        <span>Escuadra <b>Ops</b></span>
+      </a>
+      <nav class="nav__links">
+        <a href="#paso-1" data-i18n="nav.step">Paso 1</a>
+        <a href="#para-quien" data-i18n="nav.who">Para quién</a>
+        <a href="#ruta" data-i18n="nav.road">Ruta</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Nuestra visión</p>
+      <h1 data-i18n="hero.title">Empresas que operan solas en un 90%.</h1>
+      <p class="lead" data-i18n="hero.lead">Combinamos scripts e inteligencia artificial para automatizar el trabajo administrativo de todos los días. Menos errores, cierres más rápidos y tu equipo enfocado en decidir.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="#piloto" data-i18n="hero.cta">Únete al piloto</a>
+        <a class="btn btn--ghost" href="#paso-1" data-i18n="hero.cta2">Cómo funciona</a>
+      </div>
+      <ul class="chips">
+        <li data-i18n="hero.chip1">Scripts + IA</li>
+        <li data-i18n="hero.chip2">Hecho por contadores</li>
+        <li data-i18n="hero.chip3">México y Canadá</li>
+      </ul>
+    </section>
+
+    <section class="mission">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--light" data-i18n="mission.eyebrow">Nuestra misión</p>
+        <p class="mission__text" data-i18n="mission.text">Automatizar el día a día, una tarea a la vez, hasta que la operación corra sola.</p>
+      </div>
+    </section>
+
+    <section id="paso-1" class="wrap section">
+      <p class="eyebrow" data-i18n="step.eyebrow">Paso 1</p>
+      <h2 data-i18n="step.title">Tu conciliación bancaria se cierra sola.</h2>
+      <p class="sub" data-i18n="step.sub">Estados de cuenta contra CFDI del SAT, cada mes, sin capturar nada a mano.</p>
+      <ol class="steps">
+        <li>
+          <span class="steps__n">1</span>
+          <div>
+            <h3 data-i18n="step.s1t">Envías tus archivos</h3>
+            <p data-i18n="step.s1p">Estados de cuenta del banco y los XML de tus CFDI emitidos, recibidos y complementos de pago.</p>
+          </div>
+        </li>
+        <li>
+          <span class="steps__n">2</span>
+          <div>
+            <h3 data-i18n="step.s2t">Los scripts concilian</h3>
+            <p data-i18n="step.s2p">Montos, fechas, RFC, pagos parciales y un pago para varias facturas. La IA solo propone los casos dudosos.</p>
+          </div>
+        </li>
+        <li>
+          <span class="steps__n">3</span>
+          <div>
+            <h3 data-i18n="step.s3t">Tú apruebas las excepciones</h3>
+            <p data-i18n="step.s3p">Recibes la conciliación lista y un reporte de riesgos: REP faltantes, CFDI cancelados y gastos no deducibles.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="wrap section">
+      <h2 data-i18n="how.title">Cada cosa con la herramienta correcta.</h2>
+      <div class="cards">
+        <article class="card">
+          <h3 data-i18n="how.c1t">Scripts para lo repetitivo</h3>
+          <p data-i18n="how.c1p">Reglas que dan el mismo resultado siempre. Rápidas, baratas y auditables.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="how.c2t">IA para lo ambiguo</h3>
+          <p data-i18n="how.c2p">Referencias confusas, pagos parciales, textos libres. La IA sugiere; nunca registra sola.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="how.c3t">Personas para decidir</h3>
+          <p data-i18n="how.c3p">Tu equipo revisa solo lo importante. Cada corrección repetida se vuelve una nueva regla.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="para-quien" class="wrap section">
+      <p class="eyebrow" data-i18n="who.eyebrow">Para quién</p>
+      <h2 data-i18n="who.title">Hecho para quien lleva los números.</h2>
+      <div class="cards">
+        <article class="card">
+          <h3 data-i18n="who.c1t">Despachos contables</h3>
+          <p data-i18n="who.c1p">Atiende al doble de clientes con el mismo equipo.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="who.c2t">Empresas y subsidiarias</h3>
+          <p data-i18n="who.c2p">Cumplimiento con el SAT limpio y auditable, cada mes.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="who.c3t">Contratistas en Canadá</h3>
+          <p data-i18n="who.c3p">Menos horas de bookkeeping y control de inventario y costos de obra.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="ruta" class="wrap section">
+      <p class="eyebrow" data-i18n="road.eyebrow">Ruta</p>
+      <h2 data-i18n="road.title">Hacia la empresa que se opera sola.</h2>
+      <ul class="road">
+        <li class="road__item road__item--live">
+          <span class="badge badge--live" data-i18n="road.live">Piloto abierto</span>
+          <h3 data-i18n="road.r1">Conciliación bancaria contra CFDI</h3>
+        </li>
+        <li class="road__item">
+          <span class="badge" data-i18n="road.soon">Próximamente</span>
+          <h3 data-i18n="road.r2">Cuentas por pagar y proveedores</h3>
+        </li>
+        <li class="road__item">
+          <span class="badge" data-i18n="road.soon">Próximamente</span>
+          <h3 data-i18n="road.r3">Intercompañía y cost plus</h3>
+        </li>
+        <li class="road__item">
+          <span class="badge" data-i18n="road.soon">Próximamente</span>
+          <h3 data-i18n="road.r4">Inventarios y costeo de obra</h3>
+        </li>
+      </ul>
+    </section>
+
+    <section id="piloto" class="pilot">
+      <div class="wrap">
+        <h2 data-i18n="pilot.title">Buscamos 3 empresas piloto.</h2>
+        <p data-i18n="pilot.p">Condiciones preferentes a cambio de tu retroalimentación. Empezamos con un mes de tu historial y te mostramos el resultado.</p>
+        <div class="cta-row">
+          <a class="btn btn--light" href="mailto:contacto@escuadraops.com?subject=Piloto%20Escuadra%20Ops" data-i18n="pilot.cta">Quiero ser piloto</a>
+          <a class="btn btn--outline-light" id="share" href="https://wa.me/?text=Escuadra%20Ops%20%E2%80%94%20empresas%20que%20operan%20solas%3A%20https%3A%2F%2Fivanst2107.github.io%2Fescuadra-ops%2F" target="_blank" rel="noopener" data-i18n="pilot.share">Compartir por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p><b>Escuadra Ops, S.A.S.</b> <span data-i18n="footer.forming">(en constitución)</span></p>
+    <p>© 2026 · contacto@escuadraops.com</p>
+  </footer>
+
+  <a class="sticky-cta" href="#piloto" data-i18n="hero.cta">Únete al piloto</a>
+</body>
+</html>

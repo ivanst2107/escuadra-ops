@@ -18,7 +18,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/style.css" />
   <script type="module" src="/src/main.js"></script>
 </head>
@@ -37,6 +37,7 @@
       <div class="lang" role="group" aria-label="Idioma / Language">
         <button type="button" data-lang="es" aria-pressed="true">ES</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ja" aria-pressed="false">日本語</button>
       </div>
     </div>
   </header>
@@ -141,14 +142,17 @@
       <h2 data-i18n="how.title">Cada cosa con la herramienta correcta.</h2>
       <div class="cards">
         <article class="card">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"/></svg></span>
           <h3 data-i18n="how.c1t">Scripts para lo repetitivo</h3>
           <p data-i18n="how.c1p">Reglas que dan el mismo resultado siempre. Rápidas, baratas y auditables.</p>
         </article>
         <article class="card">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></span>
           <h3 data-i18n="how.c2t">IA para lo ambiguo</h3>
           <p data-i18n="how.c2p">Referencias confusas, pagos parciales, textos libres. La IA sugiere; nunca registra sola.</p>
         </article>
         <article class="card">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c.8-3.6 3.4-5.5 6.5-5.5 1.6 0 3 .5 4.1 1.4"/><path d="M15 19l2 2 4-4.5"/></svg></span>
           <h3 data-i18n="how.c3t">Personas para decidir</h3>
           <p data-i18n="how.c3p">Tu equipo revisa solo lo importante. Cada corrección repetida se vuelve una nueva regla.</p>
         </article>
@@ -160,14 +164,17 @@
       <h2 data-i18n="who.title">Hecho para quien lleva los números.</h2>
       <div class="cards">
         <article class="card">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 4l9 5.5"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span>
           <h3 data-i18n="who.c1t">Despachos contables</h3>
           <p data-i18n="who.c1p">Atiende al doble de clientes con el mismo equipo.</p>
         </article>
         <article class="card">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="11" height="18" rx="1.5"/><path d="M15 9h4.5a.5.5 0 0 1 .5.5V21M8 7h3M8 11h3M8 15h3"/></svg></span>
           <h3 data-i18n="who.c2t">Empresas y subsidiarias</h3>
           <p data-i18n="who.c2p">Cumplimiento con el SAT limpio y auditable, cada mes.</p>
         </article>
         <article class="card">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M12 7v4M2.5 15h19v2.5h-19z"/></svg></span>
           <h3 data-i18n="who.c3t">Contratistas en Canadá</h3>
           <p data-i18n="who.c3p">Menos horas de bookkeeping y control de inventario y costos de obra.</p>
         </article>
@@ -207,7 +214,7 @@
       </blockquote>
     </section>
 
-    <section id="faq" class="wrap section">
+    <section id="faq" class="wrap section split">
       <p class="eyebrow" data-i18n="faq.eyebrow">Preguntas</p>
       <h2 data-i18n="faq.title">Lo que más nos preguntan.</h2>
       <div class="faq">

@@ -1,3 +1,5 @@
+import { ja } from './ja.js';
+
 const en = {
   'nav.step': 'Step 1',
   'nav.who': 'Who it’s for',
@@ -76,10 +78,10 @@ const en = {
 
 const nodes = [...document.querySelectorAll('[data-i18n]')];
 const es = Object.fromEntries(nodes.map((n) => [n.dataset.i18n, n.textContent]));
-const meta = { es: { title: document.title }, en: { title: 'Escuadra Ops | Companies that run themselves' } };
+const meta = { es: { title: document.title }, en: { title: 'Escuadra Ops | Companies that run themselves' }, ja: { title: 'Escuadra Ops | ひとりでに回る会社へ' } };
 
 function setLang(lang) {
-  const dict = lang === 'en' ? en : es;
+  const dict = { en, ja, es }[lang] || es;
   nodes.forEach((n) => { if (dict[n.dataset.i18n]) n.textContent = dict[n.dataset.i18n]; });
   document.documentElement.lang = lang;
   document.title = meta[lang].title;
@@ -91,8 +93,9 @@ document.querySelectorAll('[data-lang]').forEach((b) => b.addEventListener('clic
 
 let saved = null;
 try { saved = localStorage.getItem('lang'); } catch {}
-const initial = saved || ((navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es');
-if (initial === 'en') setLang('en');
+const nav = (navigator.language || 'es').toLowerCase();
+const initial = saved || (nav.startsWith('ja') ? 'ja' : nav.startsWith('en') ? 'en' : 'es');
+if (initial !== 'es') setLang(initial);
 
 // Hide the phone sticky CTA while the pilot section is on screen.
 const sticky = document.querySelector('.sticky-cta');
